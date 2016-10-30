@@ -2,12 +2,17 @@
 namespace TechCorp\FrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class StaticController extends Controller{
 
 	public function homepageAction(){
-		return new Response("Hello World!");
+		$name = "David";
+		return $this->render('TechCorpFrontBundle:Static:homepage.html.twig', array('name' => $name));
+	}
+
+	public function aboutAction(){
+		return $this->render('TechCorpFrontBundle:Static:about.html.twig');	
 	}
 
 }

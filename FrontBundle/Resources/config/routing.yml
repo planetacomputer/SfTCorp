@@ -1,3 +1,11 @@
+#tech_corp_front_status:
+#    resource: "@TechCorpFrontBundle/Resources/config/routing/status.yml"
+#    prefix:   /status
+
 tech_corp_front_homepage:
     path:     /
     defaults: { _controller: TechCorpFrontBundle:Static:homepage }
+
+tech_corp_front_about:
+    path: /about
+    defaults: { _controller: TechCorpFrontBundle:Static:about }
