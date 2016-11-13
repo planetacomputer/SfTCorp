@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class ReductionCode{
 	/**
 	*  
-	*  @ORM\Column(name="idClient", type="bigint", nullable=false)
+	*  @ORM\Column(name="id", type="bigint", nullable=false)
 	*  @ORM\Id
 	*  @ORM\GeneratedValue(strategy="IDENTITY")
 	*/

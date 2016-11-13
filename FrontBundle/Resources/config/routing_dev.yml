@@ -1,0 +1,7 @@
+#tech_corp_front_status:
+#    resource: "@TechCorpFrontBundle/Resources/config/routing/status.yml"
+#    prefix:   /status
+
+tech_corp_front_timeline:
+    path: /timeline
+    defaults: { _controller: TechCorpFrontBundle:Timeline:timeline}
