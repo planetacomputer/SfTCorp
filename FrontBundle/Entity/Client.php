@@ -23,7 +23,7 @@ class Client{
 	*
 	*  @ORM\ManyToMany (targetEntity="ReductionCode", inversedBy="clients", cascade={"persist", "merge"})
 	*  @ORM\JoinTable(name="Acheter",
-	*    joinColumns={@ORM\JoinColumn(name="client_id", referencedColumnName="id")},
+	*    joinColumns={@ORM\JoinColumn(name="client_id", referencedColumnName="idClient")},
 	*    inverseJoinColumns={@ORM\JoinColumn(name="reduction_id", referencedColumnName="id")})
 	*/
 

@@ -1,6 +1,7 @@
 <?php
 namespace TechCorp\FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use TechCorp\FrontBundle\Entity\User;
 
 /**
  * Status
@@ -21,6 +22,17 @@ class Status
     private $id;
 
     /**
+    * @ORM\ManyToOne(targetEntity="User", inversedBy="statuses")
+    * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+    **/
+    protected $user;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Comment", mappedBy="status")
+    **/
+    protected $comments;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="content", type="string", length=255)
@@ -34,6 +46,9 @@ class Status
      */
     private $deleted;
 
+    public function __construct(){
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -166,6 +181,61 @@ class Status
         $this->updatedAt = new \DateTime();
     }
 
+    /**
+     * Set user
+     *
+     * @param \TechCorp\FrontBundle\Entity\User $user
+     *
+     * @return Status
+     */
+    public function setUser(\TechCorp\FrontBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
 
+        return $this;
+    }
 
+    /**
+     * Get user
+     *
+     * @return \TechCorp\FrontBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \TechCorp\FrontBundle\Entity\Comment $comment
+     *
+     * @return Status
+     */
+    public function addComment(\TechCorp\FrontBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \TechCorp\FrontBundle\Entity\Comment $comment
+     */
+    public function removeComment(\TechCorp\FrontBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
 }
