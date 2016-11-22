@@ -7,7 +7,7 @@ use TechCorp\FrontBundle\Entity\User;
  * Status
  *
  * @ORM\Table(name="tech_status")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="TechCorp\FrontBundle\Repository\StatusRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class Status

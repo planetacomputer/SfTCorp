@@ -8,7 +8,7 @@ class TimelineController extends Controller{
 
 	public function timelineAction(){
 		$em = $this->getDoctrine()->getManager();
-		$statuses = $em->getRepository('TechCorpFrontBundle:Status')->findAll();
+		$statuses = $em->getRepository('TechCorpFrontBundle:Status')->getStatusesAndUsers(true);
 		return $this->render('TechCorpFrontBundle:Timeline:timeline.html.twig', array(
 			'statuses' => $statuses,
 			));
@@ -20,12 +20,7 @@ class TimelineController extends Controller{
 		if(!$user){
 			$this->createNotFoundException("Utilisateur non trouvé");
 		}
-		$statuses = $em->getRepository('TechCorpFrontBundle:Status')->findBy(
-			array(
-				'user' => $user,
-				'deleted' => false,
-			)
-		);
+		$statuses = $em->getRepository('TechCorpFrontBundle:Status')->getUserTimeline($user)->getResult();
 
 		return $this->render('TechCorpFrontBundle:Timeline:user_timeline.html.twig',
 			array(
@@ -33,5 +28,22 @@ class TimelineController extends Controller{
 				'statuses' => $statuses,
 			)
 		);
+	}
+
+	public function friendsTimelineAction($userId){ 
+		$em = $this->getDoctrine()->getManager(); $user =
+		$em->getRepository('TechCorpFrontBundle:User')->findOneById($userId);
+		if(!$user){ 
+			$this->createNotFoundException('Utilisateur pas trouvé'); 
+		}
+		$statuses = $em->getRepository('TechCorpFrontBundle:Status')
+				->getFriendsTimeline($user)->getResult();
+
+		return $this->render('TechCorpFrontBundle:Timeline:friends_timeline.html.twig',
+			array(
+				'user' => $user,
+				'statuses' => $statuses
+		));
+
 	}
 }
