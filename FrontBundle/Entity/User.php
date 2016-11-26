@@ -1,7 +1,6 @@
 <?php
 namespace TechCorp\FrontBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\Common\Collections\ArrayCollection;
 use TechCorp\FrontBundle\Entity\Status;
 use Doctrine\ORM\Mapping as ORM;
