@@ -15,3 +15,7 @@ composer require friendsofsymfony/user-bundle "~2.0@dev"
 (https://symfony.com/doc/master/bundles/FOSUserBundle/index.html)
 
 
+12
+---
+p.243 error en codi LoadUserData.php
+p.250 la ruta de la plantilla layout a FOSBundle a 2.0.0-alpha4 es: vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig
