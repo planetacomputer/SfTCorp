@@ -20,3 +20,7 @@ composer require friendsofsymfony/user-bundle "~2.0@dev"
 p.243 error en codi LoadUserData.php
 p.250 la ruta de la plantilla layout a FOSBundle a 2.0.0-alpha4 es: vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig
 p.254 config/security.yml: switch_user parameter impersonate no funciona
+
+13
+--
+p.276 ~~$form = $this->createForm(new StatusType(), $status)~~ => $form = $this->createForm(StatusType::class);
