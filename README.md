@@ -24,3 +24,4 @@ p.254 config/security.yml: switch_user parameter impersonate no funciona
 13
 --
 p.276 ~~$form = $this->createForm(new StatusType(), $status)~~ => $form = $this->createForm(StatusType::class);
+p.279 Ultimo formulario de submit con un par de adaptaciones a Sf3 en lineas sobre createForm en TimeController.php::userTimelineAction
