@@ -2,6 +2,7 @@
 namespace TechCorp\FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use TechCorp\FrontBundle\Entity\User;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Status
@@ -36,6 +37,8 @@ class Status
      * @var string
      *
      * @ORM\Column(name="content", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max=255)
      */
     private $content;
 
@@ -110,6 +113,7 @@ class Status
     * @var \DateTime
     *
     * @ORM\Column(name="created_at", type="datetime")
+    * @Assert\DateTime
     */
     private $createdAt;
 
@@ -117,6 +121,7 @@ class Status
     * @var \DateTime
     *
     * @ORM\Column(name="updated_at", type="datetime")
+    * @Assert\DateTime
     */
     private $updatedAt;
 

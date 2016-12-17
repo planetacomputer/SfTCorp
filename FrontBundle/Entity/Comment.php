@@ -1,6 +1,7 @@
 <?php
 namespace TechCorp\FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
 *  @ORM\Table(name="comment")
@@ -37,6 +38,8 @@ class Comment{
      * @var string
      *
      *  @ORM\Column(name="content", type="string", length=255)
+     *  @Assert\NotBlank
+     *  @Assert\Length(max=255)
      */
     private $content;
 
@@ -45,6 +48,7 @@ class Comment{
      * @var \DateTime
      *
      *  @ORM\Column(name="created_at", type="datetime")
+     *  @Assert\DateTime
      */
     private $createdAt;
 
