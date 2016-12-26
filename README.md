@@ -1,5 +1,3 @@
-PHP Fatal error:  Allowed memory size of:
-php56 -d memory_limit=-1 /usr/local/bin/composer require symfony/assetic-bundle
 # SfTCorp
 9
 --
@@ -27,3 +25,7 @@ p.254 config/security.yml: switch_user parameter impersonate no funciona
 --
 p.276 ~~$form = $this->createForm(new StatusType(), $status)~~ => $form = $this->createForm(StatusType::class);
 p.279 Ultimo formulario de submit con un par de adaptaciones a Sf3 en lineas sobre createForm en TimeController.php::userTimelineAction
+
+#Notas
+PHP Fatal error:  Allowed memory size of:
+php56 -d memory_limit=-1 /usr/local/bin/composer require symfony/assetic-bundle
