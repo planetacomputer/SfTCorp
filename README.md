@@ -1,3 +1,5 @@
+PHP Fatal error:  Allowed memory size of:
+php56 -d memory_limit=-1 /usr/local/bin/composer require symfony/assetic-bundle
 # SfTCorp
 9
 --
