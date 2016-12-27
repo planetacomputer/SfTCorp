@@ -25,3 +25,13 @@ p.254 config/security.yml: switch_user parameter impersonate no funciona
 --
 p.276 ~~$form = $this->createForm(new StatusType(), $status)~~ => $form = $this->createForm(StatusType::class);
 p.279 Ultimo formulario de submit con un par de adaptaciones a Sf3 en lineas sobre createForm en TimeController.php::userTimelineAction
+
+15
+--
+p.328  ~~$authenticadedUser = $this->get('security.context')->getToken()->getUser()~~ => $authenticatedUser = $this->get('security.token_storage')->getToken()->getUser();
+p.329 Queda pendiente la instalacin de FOSJsRoutingBundle por falta de compatibilidad con Sf 3.1 a fecha. Se escriben las rutas directamente desde JavaScript
+
+
+#Notas
+PHP Fatal error:  Allowed memory size of:
+php56 -d memory_limit=-1 /usr/local/bin/composer require symfony/assetic-bundle
