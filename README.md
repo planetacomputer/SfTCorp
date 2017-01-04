@@ -7,6 +7,7 @@ doctrine:database:create
 (doctrine:schema:create --dump-sql)
 doctrine:schema:update --force
 (doctrine:schema:update --dump-sql ??)
+Cargar el doctrine-fixtures-bundle en composer.json: "doctrine/doctrine-fixtures-bundle": "^1.2"
 doctrine:fixtures:load
 
 10
