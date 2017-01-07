@@ -32,6 +32,10 @@ p.279 Ultimo formulario de submit con un par de adaptaciones a Sf3 en lineas sob
 p.328  ~~$authenticadedUser = $this->get('security.context')->getToken()->getUser()~~ => $authenticatedUser = $this->get('security.token_storage')->getToken()->getUser();
 p.329 Queda pendiente la instalacin de FOSJsRoutingBundle por falta de compatibilidad con Sf 3.1 a fecha. Se escriben las rutas directamente desde JavaScript
 
+16
+--
+I18n. Los diccionarios se crean fuera del bundle, en app/Resources/TechCorpFrontBundle.
+
 
 #Notas
 PHP Fatal error:  Allowed memory size of:
