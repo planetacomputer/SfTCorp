@@ -3,10 +3,9 @@
 {% block content %}
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Hello World!</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua.</p>
-			<p><a class="btn btn-primary btn-lg" role="button" href="{{ url('tech_corp_front_about') }}">En savoir plus</a></p>
+			<h1>{{ 'home_page.title'|trans }}Hello World!</h1>
+			<p>{{ 'home_page.content'|trans }}</p>
+			<p><a class="btn btn-primary btn-lg" role="button" href="{{ url('tech_corp_front_about') }}">{{ 'home_page.more'|trans }}</a></p>
 		</div>
 	</div>
 {% endblock content %}
